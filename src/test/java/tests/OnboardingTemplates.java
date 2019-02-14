@@ -7,7 +7,7 @@ import utils.Helpers;
 
 public class OnboardingTemplates extends BaseTest {
 
-	@Test(priority = 0)
+	@Test(priority = 1)
 	@Description("To verify onboarding templates")
 	public void testCreateTemplates() throws Exception {
 		sideNavigationBar().clickOnSettings().clickOnBoarding();
@@ -19,13 +19,6 @@ public class OnboardingTemplates extends BaseTest {
 		onBoardingTemplate().setDueDate("20");
 		onBoardingTemplate().selectOffset("after hire");
 		Helpers.clickButton("Create");
-	}
-
-	@Test(priority = 1)
-	@Description("To verify user can delete steps")
-	public void testDeleteStep() throws Exception {
-		sideNavigationBar().clickOnSettings().clickOnBoarding();
-		onBoardingTemplate().deleteTemplate("TestingTemplate");
 	}
 
 }

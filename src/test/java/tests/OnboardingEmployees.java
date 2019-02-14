@@ -5,9 +5,12 @@ import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 
 public class OnboardingEmployees extends BaseTest {
+	
+
 	@Test(priority = 2)
 	@Description("Assign to employee")
 	public void testAssignTemplate() throws Exception {
+		sideNavigationBar().clickOnSettings().clickEmployees();
 		employee().clickFirstEmployee()
 
 				.clickOnboardingLink().clickAssignNewOnbarding().selectTemplate("TestingTemplate");
@@ -31,6 +34,20 @@ public class OnboardingEmployees extends BaseTest {
 	@Description("Remove template from an Employee")
 	public void testRemoveTemplate() throws Exception {
 		employee().removeTemplate();
+	}
+	
+	@Test(priority = 6)
+	@Description("To verify user can delete steps")
+	public void testDeleteStep() throws Exception {
+		sideNavigationBar().clickOnSettings().clickOnBoarding().clickOnboardingStep();
+		onBoardingStep().deleteStep("TestingStepsfirst");
+	}
+	
+	@Test(priority = 7)
+	@Description("To verify user can delete template")
+	public void testDeleteTemplate() throws Exception {
+		sideNavigationBar().clickOnSettings().clickOnBoarding();
+		onBoardingTemplate().deleteTemplate("TestingTemplate");
 	}
 
 }
