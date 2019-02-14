@@ -2,6 +2,7 @@
 
 ### Usage
         $ git clone https://github.com/ryallurkar/WebAutomation.git
+        $ cd WebAutomation
         $ mvn clean test
 
 ### Reporting
