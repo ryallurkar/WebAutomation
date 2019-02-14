@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Glady AutF_AllureParallel" thread-count="1" parallel="methods"
+<suite name="E2E" thread-count="1"
 	data-provider-thread-count="1">
 	<listeners>
 		<listener class-name="listeners.AllureListener"></listener>
 		<listener class-name="com.automation.remarks.testng.VideoListener"></listener>
 	</listeners>
 
-	<test name="Test">
+	<test name="Test Onboarding Flow">
 		<classes>
-			<class name="tests.Test1" />
+			<class name="tests.OnboardingSteps" />
+			<class name="tests.OnboardingTemplates"/>
+			<class name="tests.OnboardingEmployees"/>
 		</classes>
 	</test> <!-- Test -->
 
