@@ -21,6 +21,12 @@ public class ApplicationConfigReader
 	@Property(value="Url")
 	private String WebsiteUrl;
 	
+	@Property(value="userName")
+	private String uname;
+	
+	@Property(value="password")
+	private String pwd;
+	
 	@Property(value="MaxPageLoadTime")
 	private int MaxPageLoadTime;
 	
@@ -36,6 +42,14 @@ public class ApplicationConfigReader
 
 	public String getWebsiteUrl() {
 		return WebsiteUrl;
+	}
+	
+	public String getUsername() {
+		return uname;
+	}
+	
+	public String getPasswordl() {
+		return pwd;
 	}
 
 	public int getMaxPageLoadTime() {

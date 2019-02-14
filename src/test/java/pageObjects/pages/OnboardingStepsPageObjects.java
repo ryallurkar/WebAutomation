@@ -78,7 +78,8 @@ public class OnboardingStepsPageObjects extends PageFactoryInitializer {
 	}
 
 	@Step("Click on Add item ")
-	public OnboardingStepsPageObjects clickOnAddItem() throws Exception {
+	public OnboardingStepsPageObjects clickOnAddItem(String stepName) throws Exception {
+		Helpers.clickLink(stepName);
 		Helpers.clickLink("Add item");
 		return this;
 	}
@@ -119,7 +120,7 @@ public class OnboardingStepsPageObjects extends PageFactoryInitializer {
 		Thread.sleep(10000);
 	}
 
-	@Step("Add emp id")
+	@Step("Add employee id")
 	public void selectEmployeeAttribute(String option) throws Exception {
 		Helpers.selectFromCustomDropdown(option);
 	}
@@ -134,7 +135,7 @@ public class OnboardingStepsPageObjects extends PageFactoryInitializer {
 		Helpers.writeInput("Description for the checkbox...", "This is description test");
 	}
 
-	@Step("Add description for the checkbox")
+	@Step("Add description for the textfield")
 	public void addNameOfTextField() throws Exception {
 		Helpers.writeInput("Name of textfield...", "This is textfield test");
 	}

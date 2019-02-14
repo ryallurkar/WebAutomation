@@ -8,7 +8,7 @@ import utils.Helpers;
 public class OnboardingTemplates extends BaseTest {
 
 	@Test(priority = 1)
-	@Description("To verify onboarding templates")
+	@Description("To verify user can create onboarding templates and assign steps")
 	public void testCreateTemplates() throws Exception {
 		sideNavigationBar().clickOnSettings().clickOnBoarding();
 		onBoardingTemplate().writeTemplateName("TestingTemplate");

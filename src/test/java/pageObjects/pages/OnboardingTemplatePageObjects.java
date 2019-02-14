@@ -30,7 +30,7 @@ public class OnboardingTemplatePageObjects extends PageFactoryInitializer {
 	@FindBy(css = ".alert.alert-success.alert-autofade")
 	private WebElement success;
 
-	@Step("Enter step name")
+	@Step("Enter Template name")
 	public OnboardingTemplatePageObjects writeTemplateName(String sname) throws Exception {
 		Helpers.writeInput("New Template...", sname);
 		return this;
@@ -54,7 +54,7 @@ public class OnboardingTemplatePageObjects extends PageFactoryInitializer {
 		return this;
 	}
 
-	@Step("Select Responsible ")
+	@Step("Select Responsible Person ")
 	public OnboardingTemplatePageObjects selectResponsible(String resName) throws Exception {
 		Helpers.select(responsible, resName);
 		return this;
@@ -66,7 +66,7 @@ public class OnboardingTemplatePageObjects extends PageFactoryInitializer {
 		return this;
 	}
 
-	@Step("Select offset direction ")
+	@Step("Select offset direction")
 	public OnboardingTemplatePageObjects selectOffset(String resName) throws Exception {
 		Helpers.select(offset, resName);
 		return this;

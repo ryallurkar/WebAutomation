@@ -8,7 +8,7 @@ public class OnboardingEmployees extends BaseTest {
 	
 
 	@Test(priority = 2)
-	@Description("Assign to employee")
+	@Description("Assign Onboarding Template to employee")
 	public void testAssignTemplate() throws Exception {
 		sideNavigationBar().clickOnSettings().clickEmployees();
 		employee().clickFirstEmployee()
@@ -17,21 +17,21 @@ public class OnboardingEmployees extends BaseTest {
 	}
 
 	@Test(priority = 3)
-	@Description("Edit Assigned OnboardinTemplate")
+	@Description("Edit Assigned Onboarding Template")
 	public void testEditAssignedTemplate() throws Exception {
 		employee().clickAssignedTemplate("TestingStepsfirst");
 		employee().editAssignedTemplate();
 	}
 
 	@Test(priority = 4)
-	@Description("Mark Template as completed")
+	@Description("Mark Onboarding Template as completed")
 	public void testTemplateAsCompleted() throws Exception {
 		employee().clickAssignedTemplate("TestingStepsfirst");
 		employee().markTemplateAsCompleted();
 	}
 
 	@Test(priority = 5)
-	@Description("Remove template from an Employee")
+	@Description("Remove Onboarding template from  Employee")
 	public void testRemoveTemplate() throws Exception {
 		employee().removeTemplate();
 	}
