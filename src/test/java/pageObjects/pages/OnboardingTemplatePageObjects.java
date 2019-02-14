@@ -79,5 +79,10 @@ public class OnboardingTemplatePageObjects extends PageFactoryInitializer {
 		Helpers.clickButton("Delete");
 		ExplicitWaiting.explicitWaitVisibilityOfElement(success,10);
 	}
+	
+	@Step("Verify Success message")
+	public boolean verifySuccessMessage() throws Exception {
+		return success.isDisplayed();
+	}
 
 }

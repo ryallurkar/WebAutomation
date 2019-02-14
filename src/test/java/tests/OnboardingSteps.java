@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
@@ -22,6 +23,7 @@ public class OnboardingSteps extends BaseTest {
 		onBoardingStep().addUrl();
 		onBoardingStep().selectEmployeeAttribute("First name");
 		onBoardingStep().addDocument();
+		Assert.assertTrue(onBoardingStep().verifySuccessMessage(), "Onboarding step processFailed");
 	}
 
 }

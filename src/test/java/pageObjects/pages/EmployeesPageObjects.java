@@ -26,7 +26,7 @@ public class EmployeesPageObjects extends PageFactoryInitializer {
 
 	@FindBy(css = "input[type=\"file\"]")
 	private List<WebElement> upload;
-	
+
 	@FindBy(css = ".alert.alert-success.alert-autofade")
 	private WebElement success;
 
@@ -77,18 +77,23 @@ public class EmployeesPageObjects extends PageFactoryInitializer {
 		Helpers.clickButton("Submit");
 		return this;
 	}
-	
+
 	@Step("Mark Template as completed")
 	public EmployeesPageObjects markTemplateAsCompleted() throws Exception {
 		Helpers.clickButton("Mark as completed");
 		return this;
 	}
-	
+
 	@Step("Remove Template")
 	public EmployeesPageObjects removeTemplate() throws Exception {
 		Helpers.clickLink("Remove onboarding template");
 		Helpers.clickButton("Delete");
 		return this;
+	}
+
+	@Step("Verify Success message")
+	public boolean verifySuccessMessage() throws Exception {
+		return success.isDisplayed();
 	}
 
 }

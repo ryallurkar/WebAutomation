@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
@@ -19,6 +20,7 @@ public class OnboardingTemplates extends BaseTest {
 		onBoardingTemplate().setDueDate("20");
 		onBoardingTemplate().selectOffset("after hire");
 		Helpers.clickButton("Create");
+		Assert.assertTrue(onBoardingTemplate().verifySuccessMessage(), "Onboarding Template creation process Failed");
 	}
 
 }
