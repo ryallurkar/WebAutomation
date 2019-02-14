@@ -3,7 +3,8 @@ package controllers;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import com.automation.remarks.video.enums.RecorderType;
 import com.automation.remarks.video.enums.RecordingMode;
@@ -19,7 +20,7 @@ public class WebDriverFactory extends BrowserFactory
 	public static String browser;
 	public static String url;
 
-	@BeforeSuite(alwaysRun=true)
+	@BeforeTest(alwaysRun=true)
 	public void suiteSetup() throws Exception
 	{
 		switch(Browser.toLowerCase())
@@ -62,24 +63,19 @@ public class WebDriverFactory extends BrowserFactory
 		setWebDriver(driver);
 	}
 
-//	@BeforeMethod
-//	public void beforeMethod() throws Exception
-//	{
-//		System.out.println("Browser: "+Browser);
-//		System.out.println("WebsiteURL: "+WebsiteURL);
-//		new WebDriverFactory();
-//		WebDriver driver = WebDriverFactory.createDriver();
-//		setWebDriver(driver);
-//		
-//		if(VideoFeature.toLowerCase().contains("enabledfailed"))
-//		{
-//			setupVideoRecordingFailedOnly();
-//		}
-//		else if(VideoFeature.toLowerCase().contains("enabledall"))
-//		{
-//			setupVideoRecordingAll();
-//		}
-//	}
+	@BeforeMethod
+	public void beforeMethod() throws Exception
+	{
+		
+		if(VideoFeature.toLowerCase().contains("enabledfailed"))
+		{
+			setupVideoRecordingFailedOnly();
+		}
+		else if(VideoFeature.toLowerCase().contains("enabledall"))
+		{
+			setupVideoRecordingAll();
+		}
+	}
 	
 	public void setupVideoRecordingFailedOnly() throws Exception
 	{
