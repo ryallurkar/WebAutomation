@@ -23,8 +23,8 @@ public class PersonioHomePageObjects extends PageFactoryInitializer
 	@Step("Enter email and Pwd to login")
 	public PersonioHomePageObjects signIn() throws Exception
 	{
-		email.sendKeys("raju90y@outlook.com");
-		password.sendKeys("TestingI$Fun123");
+		email.sendKeys(Username);
+		password.sendKeys(Password);
 		submit.click();
 		return this;		
 	}

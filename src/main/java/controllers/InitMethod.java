@@ -18,6 +18,8 @@ public class InitMethod
 	public static ApplicationConfigReader appConfig = new ApplicationConfigReader();
 	
 	public static String WebsiteURL = appConfig.getWebsiteUrl();
+	public static String Username = appConfig.getUsername();
+	public static String Password = appConfig.getPasswordl();
 	public static String Browser = appConfig.getBrowser();
 	public static int MaxPageLoadTime = appConfig.getMaxPageLoadTime();
 	public static int ImplicitlyWait = appConfig.getImplicitlyWait();
