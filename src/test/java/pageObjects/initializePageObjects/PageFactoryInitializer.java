@@ -4,6 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import controllers.BaseMethod;
 import pageObjects.pages.CartPageObjects;
+import pageObjects.pages.CheckoutPageObjects;
 import pageObjects.pages.HomePageObjects;
 import pageObjects.pages.LoginPageObjects;
 import pageObjects.pages.ProductPageObjects;
@@ -34,5 +35,9 @@ public class PageFactoryInitializer extends BaseMethod {
 	
 	public LoginPageObjects loginPage() {
 		return PageFactory.initElements(getWebDriver(), LoginPageObjects.class);
+	}
+	
+	public CheckoutPageObjects checkOutPage() {
+		return PageFactory.initElements(getWebDriver(), CheckoutPageObjects.class);
 	}
 }
