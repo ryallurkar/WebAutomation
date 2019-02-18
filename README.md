@@ -12,4 +12,3 @@
 
 
         $ allure serve allure-results
-![E2E](https://github.com/ryallurkar/WebAutomation/blob/master/src/test/resources/sample-report.png)
