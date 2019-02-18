@@ -10,12 +10,12 @@ import pageObjects.initializePageObjects.PageFactoryInitializer;
 import utils.RandomGenerator;
 
 public class RegistrationPage extends PageFactoryInitializer {
-	
-	@Test(priority = 0)
+
+	@Test(priority = 1)
 	@Description("Verify Successful Registration")
 	public void testSuccessfulRegistratio() throws Exception {
-		homePage().clickSignUp();
 		driver.switchTo().frame(0);
+		homePage().closeNotifcationIfVisible();
 		registrationPage().enterFirstname("tom");
 		registrationPage().enterlastname("martin");
 		registrationPage().enterEmail(RandomGenerator.GenerateRandomEMAILIDs());
@@ -25,12 +25,12 @@ public class RegistrationPage extends PageFactoryInitializer {
 		Assert.assertTrue(registrationPage().isOrdersVisible(), "Registation failed");
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 0)
 	@Description("Verify TOU and Data Protection link opens")
 	public void testTermsofUseLink() throws Exception {
 		homePage().clickSignUp();
 		driver.switchTo().frame(0);
-
+		homePage().closeNotifcationIfVisible();
 		registrationPage().clickTouLink();
 
 		String currentWindow = driver.getWindowHandle();
@@ -47,7 +47,7 @@ public class RegistrationPage extends PageFactoryInitializer {
 		registrationPage().clickDataLink();
 		switchToNewWindow();
 		Assert.assertTrue(getCurrentUrl().contains("datenschutz"), "Data Protection link is not opened in new window");
-
+		driver.switchTo().window(currentWindow);
 	}
 
 }

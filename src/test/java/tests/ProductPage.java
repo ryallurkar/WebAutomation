@@ -9,11 +9,11 @@ import pageObjects.initializePageObjects.PageFactoryInitializer;
 public class ProductPage extends PageFactoryInitializer {
 	
 	@Test(priority = 0)
-	@Description("Verify product details are shown")
+	@Description("	")
 	public void testProductPageDetails() throws Exception {
 		homePage().clickCloseCookie();
 		homePage().clickSearchIcon();
-		searchPage().search("VERO MODA"+"\n");
+		searchPage().search("VERO MODA shirts"+"\n");
 		searchPage().clickOnFirstProduct();
 		Assert.assertTrue(productsPage().verifyProductsImage(), "Products image are not present");
 		Assert.assertTrue(productsPage().verifyProductSize(), "Products size are not present");

@@ -13,7 +13,7 @@ public class CartPage extends PageFactoryInitializer {
 	public void testProductInCart() throws Exception {
 		homePage().clickCloseCookie();
 		homePage().clickSearchIcon();
-		searchPage().search("VERO MODA" + "\n");
+		searchPage().search("VERO MODA shirts" + "\n");
 		searchPage().clickOnFirstProduct();
 		productsPage().selectSize();
 		productsPage().clickAddBasket();

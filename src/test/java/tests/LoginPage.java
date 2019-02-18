@@ -18,6 +18,7 @@ public class LoginPage  extends PageFactoryInitializer {
 	@Test(priority = 1)
 	@Description("Verify error message shown when user tries to login without username and password")
 	public void testInvalidLogin() throws Exception {
+		driver.switchTo().frame(0);
 		loginPage().clickSubmit();
 		Assert.assertTrue(loginPage().isErrorVisible(), "No error message shown");
 	}
@@ -35,6 +36,7 @@ public class LoginPage  extends PageFactoryInitializer {
 	public void testForgotPassword() throws Exception {
 		homePage().clickSignUp();
 		driver.switchTo().frame(0);
+		homePage().closeNotifcationIfVisible();
 		registrationPage().clickLogin();
 		loginPage().clickForgotPassword();
 		loginPage().enterEmail("fafaa@gmail.com");
