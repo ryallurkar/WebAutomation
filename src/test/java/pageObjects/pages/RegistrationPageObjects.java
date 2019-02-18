@@ -4,8 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import io.qameta.allure.Step;
+import pageObjects.initializePageObjects.PageFactoryInitializer;
 
-public class RegistrationPageObjects {
+public class RegistrationPageObjects extends PageFactoryInitializer {
 
 	@FindBy(css = "input[name=\"firstName\"]")
 	private WebElement firstname;
@@ -31,6 +32,9 @@ public class RegistrationPageObjects {
 	@FindBy(xpath = "//a[text()=\"Datenschutzerklärung\"]")
 	private WebElement dataProtectionLink;
 
+	@FindBy(xpath = "//a[text()=\"Du hast einen Account: Jetzt einloggen\"]")
+	private WebElement login;
+	
 	@Step("Enter firstname")
 	public void enterFirstname(String fname) throws Exception {
 		firstname.sendKeys(fname);
@@ -54,6 +58,11 @@ public class RegistrationPageObjects {
 	@Step("Click submit")
 	public void clickSubmit() throws Exception {
 		submit.click();
+	}
+	
+	@Step("Click Login")
+	public void clickLogin() throws Exception {
+		login.click();
 	}
 
 	@Step("Click submit")

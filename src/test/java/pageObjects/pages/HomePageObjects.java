@@ -1,5 +1,6 @@
 package pageObjects.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -114,6 +115,7 @@ public class HomePageObjects extends PageFactoryInitializer {
 	public void clickSignUp() throws Exception {
 		BurgerIcon.click();
 		signUp.click();
+		driver.findElement(By.cssSelector("button[class*=\"notification-close\"]")).click();
 	}
 
 	@Step("Close Cookie Manager")
