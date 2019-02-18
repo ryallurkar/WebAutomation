@@ -10,7 +10,8 @@ import pageObjects.initializePageObjects.PageFactoryInitializer;
 import utils.RandomGenerator;
 
 public class RegistrationPage extends PageFactoryInitializer {
-
+	
+	@Test(priority = 0)
 	@Description("Verify Successful Registration")
 	public void testSuccessfulRegistratio() throws Exception {
 		homePage().clickSignUp();
@@ -24,7 +25,7 @@ public class RegistrationPage extends PageFactoryInitializer {
 		Assert.assertTrue(registrationPage().isOrdersVisible(), "Registation failed");
 	}
 
-	@Test(priority = 0)
+	@Test(priority = 1)
 	@Description("Verify TOU and Data Protection link opens")
 	public void testTermsofUseLink() throws Exception {
 		homePage().clickSignUp();

@@ -9,9 +9,16 @@ import pageObjects.initializePageObjects.PageFactoryInitializer;
 public class HomePage extends PageFactoryInitializer {
 	
 	@Test(priority = 0)
-	@Description("Verify Successful Registration")
+	@Description("Verify all homepage elements are present")
 	public void testHomePageElement() throws Exception {
-		
+		Assert.assertTrue(homePage().verifyHeader(), "Header is not present");
+		Assert.assertTrue(homePage().verifyFooter(), "Footer is not present");
+		Assert.assertTrue(homePage().verifyBurgerIcon(), "Burger icon is not present");
+		Assert.assertTrue(homePage().verifyTopCategorySwitch(), "TOP Category switch is not present");
+		Assert.assertTrue(homePage().verifyCart(), "Cart icon is not present");
+		Assert.assertTrue(homePage().verifyLogo(), "Logo is not present");
+		Assert.assertTrue(homePage().verifySearch(), "Search is not present");
+		Assert.assertTrue(homePage().verifyWishlist(), "Wishlist is not present");
 		Assert.assertTrue(homePage().verifyBrowseCategoryFilter(), "BrowseCategoryFilter is not present");
 	}
 	

@@ -9,7 +9,7 @@ import pageObjects.initializePageObjects.PageFactoryInitializer;
 public class SearchPage extends PageFactoryInitializer {
 	
 	@Test(priority = 0)
-	@Description("Verify search works")
+	@Description("Verify search works with product")
 	public void testSearchProduct() throws Exception {
 		homePage().clickCloseCookie();
 		homePage().clickSearchIcon();
@@ -18,7 +18,7 @@ public class SearchPage extends PageFactoryInitializer {
 	}
 	
 	@Test(priority = 1)
-	@Description("Verify if first product opens")
+	@Description("Verify user can open product after search")
 	public void testOpenFirstSearchedProduct() throws Exception {
 		String previousUrl = getCurrentUrl();
 		searchPage().clickOnFirstProduct();
@@ -27,7 +27,7 @@ public class SearchPage extends PageFactoryInitializer {
 	}
 	
 	@Test(priority = 1)
-	@Description("Verify if first product opens")
+	@Description("Verify user can see filters on the products")
 	public void testFilterAreOpened() throws Exception {
 		searchPage().clickFilter();
 		Assert.assertTrue(getCurrentUrl().contains("showFilterMenu=true"),"Filter page is not opened");
