@@ -32,4 +32,22 @@
 		</classes>
 	</test> <!-- Test -->
 
+	<test name="Test Login Page">
+		<classes>
+			<class name="tests.LoginPage" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="Test registration Page">
+		<classes>
+			<class name="tests.RegistrationPage" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Test Checkout Page">
+		<classes>
+			<class name="tests.CheckoutPage" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
