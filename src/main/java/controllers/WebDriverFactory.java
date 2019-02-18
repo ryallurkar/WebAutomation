@@ -2,9 +2,9 @@ package controllers;
 
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 import com.automation.remarks.video.enums.RecorderType;
 import com.automation.remarks.video.enums.RecordingMode;
@@ -20,7 +20,7 @@ public class WebDriverFactory extends BrowserFactory
 	public static String browser;
 	public static String url;
 
-	@BeforeTest(alwaysRun=true)
+	@BeforeClass(alwaysRun=true)
 	public void suiteSetup() throws Exception
 	{
 		switch(Browser.toLowerCase())
@@ -107,7 +107,7 @@ public class WebDriverFactory extends BrowserFactory
 		return wd.get();
 	}
 
-	@AfterSuite(alwaysRun=true,enabled=true)
+	@AfterClass(alwaysRun=true,enabled=true)
 	public void afterMethod() throws Exception
 	{
 		Thread.sleep(2000);

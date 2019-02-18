@@ -111,5 +111,12 @@ public class Helpers extends BaseMethod {
 		Thread.sleep(1500);
 		getVisibleElement(driver.findElements(By.cssSelector(".chosen-results>li"))).click();
 	}
+	
+	// Check if element is visible
+	public boolean isElementVisibl(WebElement element) throws InterruptedException {
+		return element.isDisplayed();
+	}
+	
+	
 
 }

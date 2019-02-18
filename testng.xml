@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="E2E" thread-count="1"
-	data-provider-thread-count="1">
+<suite name="E2E" thread-count="1" data-provider-thread-count="1">
 	<listeners>
 		<listener class-name="listeners.AllureListener"></listener>
-		<listener class-name="com.automation.remarks.testng.VideoListener"></listener>
+		<listener
+			class-name="com.automation.remarks.testng.VideoListener"></listener>
 	</listeners>
 
-	<test name="Test Onboarding Flow">
+	<test name="Test Home Page">
 		<classes>
-			<class name="tests.OnboardingSteps" />
-			<class name="tests.OnboardingTemplates"/>
-			<class name="tests.OnboardingEmployees"/>
+			<class name="tests.HomePage" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Test Search Page">
+		<classes>
+			<class name="tests.SearchPage" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Test Product Page">
+		<classes>
+			<class name="tests.ProductPage" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="Test Cart Page">
+		<classes>
+			<class name="tests.CartPage" />
 		</classes>
 	</test> <!-- Test -->
 
