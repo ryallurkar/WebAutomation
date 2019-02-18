@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import io.qameta.allure.Step;
 import pageObjects.initializePageObjects.PageFactoryInitializer;
+import utils.ExplicitWaiting;
 
 public class RegistrationPageObjects extends PageFactoryInitializer {
 
@@ -23,7 +24,7 @@ public class RegistrationPageObjects extends PageFactoryInitializer {
 	@FindBy(css = "button[type=\"submit\"]")
 	private WebElement submit;
 
-	@FindBy(xpath = "//p[text()='meine Bestellungen ansehen']")
+	@FindBy(css = "div[class*=\"Offcanvas__Center\"]")
 	private WebElement findMyOrders;
 
 	@FindBy(xpath = "//a[text()=\"Nutzungsbedingungen\"]")
@@ -34,24 +35,28 @@ public class RegistrationPageObjects extends PageFactoryInitializer {
 
 	@FindBy(xpath = "//a[text()=\"Du hast einen Account: Jetzt einloggen\"]")
 	private WebElement login;
-	
+
 	@Step("Enter firstname")
 	public void enterFirstname(String fname) throws Exception {
+		firstname.clear();
 		firstname.sendKeys(fname);
 	}
 
 	@Step("Enter lastname")
 	public void enterlastname(String lname) throws Exception {
+		lastname.clear();
 		lastname.sendKeys(lname);
 	}
 
 	@Step("Enter email")
 	public void enterEmail(String mail) throws Exception {
+		email.clear();
 		email.sendKeys(mail);
 	}
 
 	@Step("Enter password")
 	public void enterPassword(String pwd) throws Exception {
+		password.clear();
 		password.sendKeys(pwd);
 	}
 
@@ -59,9 +64,13 @@ public class RegistrationPageObjects extends PageFactoryInitializer {
 	public void clickSubmit() throws Exception {
 		submit.click();
 	}
-	
+
 	@Step("Click Login")
 	public void clickLogin() throws Exception {
+		scrollIntoView(login);
+		ExplicitWaiting.explicitWaitVisibilityOfElement(login, 30);
+		ExplicitWaiting.explicitWaitElementToBeClickable(login, 30);
+		Thread.sleep(4000);
 		login.click();
 	}
 

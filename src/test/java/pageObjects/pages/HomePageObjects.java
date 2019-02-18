@@ -23,7 +23,7 @@ public class HomePageObjects extends PageFactoryInitializer {
 	@FindBy(css = "a[data-cy-id=\"HeaderAYLogo\"]")
 	private WebElement logo;
 
-	@FindBy(css = "a[data-cy-id=\"HeaderSearchIcon\"]")
+	@FindBy(css = "*[data-cy-id=\"HeaderSearchIcon\"]")
 	private WebElement search;
 
 	@FindBy(css = "a[data-cy-id=\"HeaderWishlistIcon\"]>div>i")
@@ -44,6 +44,9 @@ public class HomePageObjects extends PageFactoryInitializer {
 	@FindBy(xpath = "//*[text()=\"Melde Dich jetzt an\"]")
 	private WebElement signUp;
 
+	@FindBy(css = "button[class*=\"notification-close\"]")
+	private WebElement notificationClose;
+	
 	@Step("Verify Burger icon is visible ")
 	public boolean verifyBurgerIcon() throws Exception {
 		return BurgerIcon.isDisplayed();
@@ -110,12 +113,19 @@ public class HomePageObjects extends PageFactoryInitializer {
 	public void goToHomePage() throws Exception {
 		driver.get(WebsiteURL);
 	}
+	
+	public  void closeNotifcationIfVisible() throws Exception {
+		try {
+			notificationClose.click();
+		}catch(Exception e) {
+			System.out.println("No notification found");
+		}
+	}
 
 	@Step("Click Signup")
 	public void clickSignUp() throws Exception {
 		BurgerIcon.click();
 		signUp.click();
-		driver.findElement(By.cssSelector("button[class*=\"notification-close\"]")).click();
 	}
 
 	@Step("Close Cookie Manager")
